@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Install vsftpd FTP server
+sudo apt-get install -y vsftpd
+
+# Configure vsftpd
+sudo nano /etc/vsftpd.conf
+
+# Uncomment and modify the following settings:
+# anonymous_enable=NO
+# local_enable=YES
+# write_enable=YES
+
+# Restart vsftpd service
+sudo systemctl restart vsftpd
