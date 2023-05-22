@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Install Postfix mail server
-sudo apt-get install -y postfix
+apt-get install -y postfix
 
 # Configure Postfix
-sudo nano /etc/postfix/main.cf
+nano /etc/postfix/main.cf
 
 # Customize the following settings:
 # myhostname = your_domain.com
 # mydestination = your_domain.com, localhost.localdomain, localhost
 
 # Restart Postfix service
-sudo systemctl restart postfix
+systemctl restart postfix
