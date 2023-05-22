@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Install DHCP server
-sudo apt-get install -y isc-dhcp-server
+apt-get install -y isc-dhcp-server
 
 # Configure DHCP server
-sudo nano /etc/dhcp/dhcpd.conf
+nano /etc/dhcp/dhcpd.conf
 
 # Add the following configuration to the file:
 # authoritative;
@@ -15,4 +15,4 @@ sudo nano /etc/dhcp/dhcpd.conf
 # }
 
 # Restart DHCP service
-sudo systemctl restart isc-dhcp-server
+systemctl restart isc-dhcp-server
