@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Install Apache web server
-sudo apt-get install -y apache2
+apt-get install -y apache2
 
 # Configure Apache
-sudo nano /etc/apache2/sites-available/000-default.conf
+nano /etc/apache2/sites-available/000-default.conf
 
 # Add the following configuration to the file:
 # <VirtualHost *:80>
@@ -19,7 +19,7 @@ sudo nano /etc/apache2/sites-available/000-default.conf
 # </VirtualHost>
 
 # Enable Apache rewrite module
-sudo a2enmod rewrite
+a2enmod rewrite
 
 # Restart Apache service
-sudo systemctl restart apache2
+systemctl restart apache2
