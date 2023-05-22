@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Install DNS server
+sudo apt-get install -y bind9
+
+# Configure DNS server
+sudo nano /etc/bind/named.conf.local
+
+# Add the following configuration to the file:
+# zone "example.com" {
+#   type master;
+#   file "/etc/bind/db.example.com";
+# };
+
+# Create a zone file
+sudo nano /etc/bind/db.example.com
+
+# Add the following configuration to the file:
+# $TTL 1D
+# @       IN      SOA     ns1.example.com. admin.example.com. (
+#                               2023052201      ; Serial
+#                               8H              ; Refresh
+#                               2H              ; Retry
+#                               4W              ; Expire
+#                               1D )            ; Minimum TTL
+# ;
+# @       IN      NS      ns1.example.com.
+# @       IN      A       192.168.1.10
+
+# Restart DNS service
+sudo systemctl restart bind9
