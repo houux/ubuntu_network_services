@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Install Apache web server
+sudo apt-get install -y apache2
+
+# Configure Apache
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+# Add the following configuration to the file:
+# <VirtualHost *:80>
+#     DocumentRoot /var/www/html
+#     ServerName your_domain.com
+#     <Directory /var/www/html>
+#         Options Indexes FollowSymLinks MultiViews
+#         AllowOverride All
+#         Order allow,deny
+#         allow from all
+#     </Directory>
+# </VirtualHost>
+
+# Enable Apache rewrite module
+sudo a2enmod rewrite
+
+# Restart Apache service
+sudo systemctl restart apache2
